@@ -51,7 +51,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/samsung/gts6lwifi/prebuilt/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := device/samsung/gts6lwifi/prebuilt/Image-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_APPEND_DTB := true
@@ -94,7 +94,7 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 
 # TWRP
-TW_DEVICE_VERSION := 1_mentalmuso
+TW_DEVICE_VERSION := 3_mentalmuso
 RECOVERY_VARIANT := twrp
 TW_THEME := landscape_hdpi
 RECOVERY_SDCARD_ON_DATA := true
