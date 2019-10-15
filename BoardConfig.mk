@@ -59,13 +59,14 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Image
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/firmware/image nokaslr printk.devkmsg=on androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
 
 # Platform
+BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msmnile
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 QCOM_BOARD_PLATFORMS += msmnile
@@ -91,13 +92,11 @@ BOARD_AVB_ENABLE := false
 BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE := true
+PLATFORM_VERSION := 16.1.0
+PLATFORM_SECURITY_PATCH := 2025-12-31
 
 # TWRP
-TW_DEVICE_VERSION := 4_mentalmuso
+TW_DEVICE_VERSION := 5_mentalmuso
 RECOVERY_VARIANT := twrp
 TW_THEME := landscape_hdpi
 RECOVERY_SDCARD_ON_DATA := true
